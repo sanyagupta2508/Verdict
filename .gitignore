@@ -1,0 +1,17 @@
+# Environment variables (CRITICAL: Keeps your Gemini API Key secret)
+.env
+*.env
+
+# Python virtual environment & cache
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db

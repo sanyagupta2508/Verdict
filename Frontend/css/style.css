@@ -1,0 +1,487 @@
+/* ==========================================================================
+   1. VARIABLES & RESET (DARK MODE INVERTED)
+   ========================================================================== */
+:root {
+    --bg-primary: #0a0a0a;       /* Deep charcoal/black background */
+    --bg-secondary: #141414;     /* Slightly lighter grey for cards/sections */
+    --text-primary: #ffffff;     /* Pure white for prominent headings */
+    --text-secondary: #a0a0a0;   /* Muted grey for subtext and descriptions */
+    --border-color: #262626;     /* Subtle border line dividing sections */
+    --accent-focus: #ffffff;     /* High-contrast focus states */
+    
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    
+    --transition-smooth: all 0.3s ease;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+/* ==========================================================================
+   2. GLOBAL TYPOGRAPHY & ELEMENTS
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   3. SITE HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+    color: var(--text-primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-primary);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero-section {
+    padding: 6rem 2rem 3rem 2rem;
+    background-color: var(--bg-primary);
+}
+
+.hero-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.hero-tagline {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   5. AI INTERFACE & CONTAINER CARDS
+   ========================================================================== */
+.assistant-section {
+    padding: 2rem 2rem 5rem 2rem;
+}
+
+.assistant-container {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.decision-card, .decision-output-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    transition: var(--transition-smooth);
+}
+
+.decision-card:focus-within {
+    border-color: var(--text-secondary);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+}
+
+.input-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+textarea {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    resize: vertical;
+    outline: none;
+    transition: var(--transition-smooth);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+textarea:focus {
+    border-color: #444444;
+}
+
+.form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Output Wrapper States */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   6. HOW IT WORKS / FEATURES SECTION
+   ========================================================================== */
+.features-section {
+    background-color: var(--bg-secondary);
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.features-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.step-card {
+    background: transparent;
+}
+
+.step-number {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.step-number::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background-color: var(--border-color);
+    margin-left: 0.75rem;
+    vertical-align: middle;
+}
+
+.step-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.step-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   7. SITE FOOTER
+   ========================================================================== */
+.site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .features-section {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    .header-container {
+        padding: 1.25rem 1.5rem;
+    }
+    .main-nav {
+        gap: 1.5rem;
+    }
+    .decision-card, .decision-output-card {
+        padding: 1.75rem;
+    }
+}
+/* ==========================================
+   VERDICT STREAMING & OUTPUT COMPONENT STYLES
+   ========================================== */
+
+/* Output Card Container Setup */
+.decision-output-card {
+    background: #0f0f11;
+    border: 1px solid #222226;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.decision-output-card.hidden {
+    display: none;
+}
+
+/* Header & Badges inside Output Card */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1a1a1e;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    color: #a1a1aa;
+    border: 1px solid #27272a;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Main Analytical Output Typography */
+.markdown-body {
+    font-family: 'Inter', sans-serif;
+    color: #d4d4d8;
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+/* Dynamic Section Block Titles (Regex target) */
+.section-block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-block-title:first-child {
+    margin-top: 0;
+}
+
+/* Custom Bullet Accent */
+.bullet-accent {
+    color: #e11d48; /* Red accent dot */
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 0.25rem;
+}
+
+/* System Loader Pulse Effect */
+.system-loader {
+    color: #71717a;
+    font-size: 0.95rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* Error Container */
+.error-box {
+    background: rgba(225, 29, 72, 0.05);
+    border: 1px solid rgba(225, 29, 72, 0.2);
+    padding: 1.25rem;
+    border-radius: 8px;
+    color: #fda4af;
+}
+
+.error-title {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}

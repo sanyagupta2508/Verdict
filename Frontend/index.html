@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdict — From Analysis Paralysis to Clarity in Seconds</title>
+    <!-- Premium Google Fonts: Inter for structured text, Playfair Display for elegant headlines -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet LINK -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">VERDICT</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-title">From Analysis Paralysis<br>to Clarity in Seconds.</h1>
+                <p class="hero-tagline">Put a full stop to overthinking.</p>
+            </div>
+        </section>
+
+        <!-- AI Decision Assistant Interface Section -->
+        <section class="assistant-section">
+            <div class="assistant-container">
+                
+                <!-- Input State -->
+                <div class="decision-card">
+                    <form id="decision-form" onsubmit="return false;">
+                        <label for="user-prompt" class="input-label">What decision are you weighing today?</label>
+                        <textarea 
+                            id="user-prompt" 
+                            placeholder="e.g., Should I launch a subscription model for my indie project now, or bootstrap via consulting for another six months?"
+                            rows="4"
+                            required
+                        ></textarea>
+                        
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn" class="btn-primary">
+                                <span>Analyze Situation</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Output State Container (Hidden by default using CSS, populated by JS) -->
+                <div id="decision-output-container" class="decision-output-card hidden">
+                    <div class="output-header">
+                        <span class="badge">Verdict Analysis</span>
+                        <button id="reset-btn" class="btn-secondary">New Decision</button>
+                    </div>
+                    
+                    <!-- Real-time streaming wrapper -->
+                    <div id="streaming-output" class="markdown-body">
+                        <!-- Streaming text blocks will layer in here dynamically -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- How Verdict Works Section -->
+        <section class="features-section">
+            <div class="features-container">
+                <h2 class="section-title">A Clear Path Forward</h2>
+                <p class="section-subtitle">Unlike conversational LLMs that stack options, Verdict processes your problem space through a structural framework designed to strip out cognitive noise.</p>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">Deconstruct Constraints</h3>
+                        <p class="step-description">We identify hidden long-term consequences, structural trade-offs, and immediate risks embedded within your scenario.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">Weigh Alternatives</h3>
+                        <p class="step-description">Options are cross-referenced cleanly against your ultimate objective, balancing direct costs against friction points.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">Execute Singularity</h3>
+                        <p class="step-description">We output exactly one recommended path along with a step-by-step framework to begin deployment immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Verdict. Built by Team FullStop.</p>
+        </div>
+    </footer>
+
+    <!-- Frontend Interaction Scripts -->
+    <!-- Added a version query to completely reset local network browser caching -->
+    <script src="/js/app.js?v=2.0"></script>
+</body>
+</html>

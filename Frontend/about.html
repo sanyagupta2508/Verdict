@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Verdict — Empowering Strategic Clarity</title>
+    <!-- Premium Google Fonts: Inter and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .about-section {
+            padding: 6rem 2rem 4rem 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .about-header {
+            margin-bottom: 4rem;
+        }
+        .about-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .about-lead {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 800px;
+        }
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+        .content-block h3 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .content-block p {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        /* New Team Layout Styles */
+        .team-section {
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0;
+        }
+        
+        /* Primary Tier: Sanya and Sameer */
+        .team-tier-primary {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .primary-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: var(--transition-smooth);
+        }
+        .primary-card:hover {
+            border-color: #444444;
+        }
+        .primary-name {
+            font-size: 1.8rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+        
+        /* Secondary Tier: Archi (Centered below) */
+        .team-tier-secondary {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        .secondary-card {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem 2.5rem;
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+        .secondary-card:hover {
+            border-color: #333333;
+        }
+        .secondary-name {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        .secondary-card:hover .secondary-name {
+            color: var(--text-primary);
+        }
+        
+        /* Interactive Profile Links */
+        .member-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .team-tier-secondary .member-links {
+            justify-content: center;
+        }
+        .member-link {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+        }
+        .member-link:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--text-primary);
+        }
+        
+        @media (max-width: 900px) {
+            .grid-two-col, .team-tier-primary {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">VERDICT</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="about-section">
+        
+        <!-- Header Section -->
+        <div class="about-header">
+            <h1 class="about-title">About Verdict</h1>
+            <p class="about-lead">An architectural solution designed to decouple emotion from choices, transforming systemic analysis paralysis into direct, confident execution milestones.</p>
+        </div>
+
+        <!-- Mission & Objectives Grid -->
+        <div class="grid-two-col">
+            <div class="content-block">
+                <h3>Our Mission</h3>
+                <p>To reduce systemic cognitive fatigue. Verdict aims to bypass the standard infinite loop frameworks generated by conversational chat elements, introducing objective, structured logic layers that deliver real, singular clarity inside complex parameters.</p>
+            </div>
+            <div class="content-block">
+                <h3>Core Objectives</h3>
+                <p>To construct an interface capable of weighing multidimensional tradeoffs, identifying silent risks, mapping long-term operational impacts, and delivering definitive project directions without relying on weak "it depends" responses.</p>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2 class="section-title" style="text-align: left;">Meet Team FullStop</h2>
+            <p class="section-subtitle" style="text-align: left; margin: 0.5rem 0 0 0;">The engineering and design structure behind Verdict.</p>
+            
+            <!-- Tier 1: Prominent Leaders (Sanya & Sameer) -->
+            <div class="team-tier-primary">
+                <!-- Sanya Gupta -->
+                <div class="primary-card">
+                    <h3 class="primary-name">Sanya Gupta</h3>
+                    <div class="member-links">
+                        <a href="https://linkedin.com" target="_blank" class="member-link">LinkedIn</a>
+                        <a href="mailto:sanya@example.com" class="member-link">Email</a>
+                    </div>
+                </div>
+
+                <!-- Sameer Dahiya -->
+                <div class="primary-card">
+                    <h3 class="primary-name">Sameer Dahiya</h3>
+                    <div class="member-links">
+                        <a href="https://linkedin.com" target="_blank" class="member-link">LinkedIn</a>
+                        <a href="mailto:sameer@example.com" class="member-link">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 2: Subordinate Lower Placement (Archi) -->
+            <div class="team-tier-secondary">
+                <div class="secondary-card">
+                    <h3 class="secondary-name">Archi</h3>
+                    <div class="member-links">
+                        <a href="https://linkedin.com" target="_blank" class="member-link">LinkedIn</a>
+                        <a href="mailto:archi@example.com" class="member-link">Email</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Verdict. Built by Team FullStop.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
